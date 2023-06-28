@@ -1,0 +1,153 @@
+html {
+  box-sizing: border-box;
+  font-size: 16px;
+  /** https://systemfontstack.com/ */
+  font-family: Iowan Old Style, Apple Garamond, Baskerville, Times New Roman, Droid Serif, Times, Source Serif Pro, serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+  
+  --color-background: #EEF4D4;
+  --color-primary: #D64550;
+  --color-secondary: #EA9E8D;
+
+  background-color: var(--color-background);
+}
+/** https://www.joshwcomeau.com/shadow-palette/ */
+:root {
+  --shadow-color: 72deg 24% 50%;
+  --shadow-elevation-low:
+    0.3px 0.3px 0.4px hsl(var(--shadow-color) / 0.49),
+    0.5px 0.6px 0.8px -1.5px hsl(var(--shadow-color) / 0.43),
+    1.2px 1.5px 2px -3px hsl(var(--shadow-color) / 0.38);
+  --shadow-elevation-medium:
+    0.3px 0.3px 0.4px hsl(var(--shadow-color) / 0.51),
+    0.9px 1.1px 1.5px -1px hsl(var(--shadow-color) / 0.47),
+    2.4px 2.9px 4px -2px hsl(var(--shadow-color) / 0.43),
+    6.2px 7.4px 10.1px -3px hsl(var(--shadow-color) / 0.39);
+  --shadow-elevation-high:
+    0.3px 0.3px 0.4px hsl(var(--shadow-color) / 0.48),
+    1.6px 1.9px 2.6px -0.4px hsl(var(--shadow-color) / 0.46),
+    3.1px 3.7px 5.1px -0.9px hsl(var(--shadow-color) / 0.44),
+    5.4px 6.4px 8.8px -1.3px hsl(var(--shadow-color) / 0.42),
+    9px 10.6px 14.6px -1.7px hsl(var(--shadow-color) / 0.4),
+    14.5px 17.2px 23.6px -2.1px hsl(var(--shadow-color) / 0.38),
+    22.5px 26.7px 36.7px -2.6px hsl(var(--shadow-color) / 0.36),
+    33.6px 40px 54.9px -3px hsl(var(--shadow-color) / 0.34);
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, ol, ul {
+  margin: 0;
+  padding: 0;
+  font-weight: normal;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+#envelope-wrapper {
+  width: 90vw;
+  height: 39.079vw;
+  margin: 4rem auto;
+}
+
+#envelope {
+  width: 100%;
+  height: 100%;
+  box-shadow: var(--shadow-elevation-high);
+  background-color: white;
+  border: none;
+}
+
+#in-frame {
+  background-color: white;
+  width: 100vw;
+  height: 100vh;
+  padding: 4vw;
+  overflow: hidden;
+}
+
+.editable {
+  display: block;
+  border: 1px dashed var(--color-primary);
+  min-width: 25%;
+  max-width: 100%;
+  min-height: 4rem;
+  max-height: 100%;
+  padding: 1.5vw;
+  position: absolute;
+}
+
+@media print {
+  .editable, .editable:focus {
+    outline: none;
+    border: none;
+  }
+}
+
+.editable:focus {
+  outline: none;
+  border: 1px solid var(--color-primary);
+}
+
+#from {
+  font-size: 1.8vw;
+}
+
+#to {
+  font-size: 3vw;
+  max-width: 70%;
+  top: 40%;
+  left: 30%;
+}
+[data-placeholder]::before {
+  content: attr(data-placeholder);
+}
+/** Hide the placeholder when selected, or when there is text inside */
+[data-placeholder]:focus::before, [data-placeholder]:not(:empty)::before {
+  content: none;
+}
+
+header, section {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+button {
+  cursor: pointer;
+  width: fit-content;
+  padding: 1rem;
+  background-color: var(--color-secondary);
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: var(--shadow-elevation-medium);
+  transition: all 0.2s ease-in-out;
+}
+button:hover {
+  box-shadow: var(--shadow-elevation-high);
+  transform: translate(-0.2rem, -0.2rem);
+}
+button:active {
+  box-shadow: var(--shadow-elevation-medium);
+  transform: translate(-0.1rem, -0.1rem);
+}
+
+#print {
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+

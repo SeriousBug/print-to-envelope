@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Envelope Print Template</title>
+    <meta
+      name="description"
+      content="Fill out the addresses and print on an envelope!"
+    />
+
+    <!-- OpenGraph -->
+    <meta property="og:title" content="Envelope Print Template" />
+    <meta property="og:type" content="website" />
+    <!--<meta
+      property="og:url"
+      content="https://seriousbug.github.io/print-to-envelope/"
+    />-->
+    <meta
+      property="og:description"
+      content="Fill out the addresses and print on an envelope!"
+    />
+    <meta property="og:image" content="/icons/large.jpg" />
+
+    <!-- Favicon & iOS icons -->
+    <link rel="icon" type="image/png" href="/icons/favicon.png" />
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      sizes="167x167"
+      href="/icons/favicon-167.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      type="image/png"
+      sizes="180x180"
+      href="/icons/favicon-180.png"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header>
+      <h1>Envelope Print Template</h1>
+      <p>Fill out the addresses and print on an envelope!</p>
+    </header>
+    <div id="envelope-wrapper">
+      <iframe id="envelope" src="/iframe.html"></iframe>
+    </div>
+
+    <section>
+      <label> Size of the FROM address: </label>
+      <input
+        type="range"
+        name="from-scale"
+        id="from-scale"
+        min="0.1"
+        max="10"
+        step="any"
+        value="1.8"
+      />
+
+      <label for="to-scale"> Size of the TO address: </label>
+      <input
+        type="range"
+        name="to-scale"
+        id="to-scale"
+        min="0.1"
+        max="20"
+        step="any"
+        value="3"
+      />
+
+      <label for="font"> Font (uses your system fonts) </label>
+      <select id="font" name="font">
+        <option value="serif">Serif</option>
+        <option value="sans-serif">Sans-Serif</option>
+        <option value="monospace">Monospace</option>
+      </select>
+
+      <button id="print">Print</button>
+    </section>
+
+    <script src="script.js"></script>
+  </body>
+</html>
