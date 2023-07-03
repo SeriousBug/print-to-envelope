@@ -13,10 +13,6 @@ html {
 /** https://www.joshwcomeau.com/shadow-palette/ */
 :root {
   --shadow-color: 72deg 24% 50%;
-  --shadow-elevation-low:
-    0.3px 0.3px 0.4px hsl(var(--shadow-color) / 0.49),
-    0.5px 0.6px 0.8px -1.5px hsl(var(--shadow-color) / 0.43),
-    1.2px 1.5px 2px -3px hsl(var(--shadow-color) / 0.38);
   --shadow-elevation-medium:
     0.3px 0.3px 0.4px hsl(var(--shadow-color) / 0.51),
     0.9px 1.1px 1.5px -1px hsl(var(--shadow-color) / 0.47),
@@ -94,6 +90,19 @@ body {
   .editable, .editable:focus {
     outline: none;
     border: none;
+  }
+
+  header, section, footer {
+    display: none !important;
+  }
+
+  #envelope-wrapper {
+    margin: 0 !important;
+  }
+
+  #envelope {
+    box-shadow: none !important;
+    border: none !important;
   }
 }
 
