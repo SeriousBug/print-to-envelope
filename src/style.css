@@ -121,10 +121,14 @@ body {
 }
 
 header, section {
-  padding: 4rem;
+  padding: 2rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
+}
+
+section {
+  max-width: 960px;
 }
 
 button {
@@ -151,3 +155,20 @@ button:active {
   padding-right: 4rem;
 }
 
+/* These will be flipped if javascript is disabled. */
+.noscript {
+  visibility: collapse;
+}
+.script {
+  visibility: visible;
+}
+
+p {
+  margin: 1rem 0;
+  line-height: 1.5rem;
+  max-width: 720px;
+}
+
+footer {
+  padding: 1rem;
+}

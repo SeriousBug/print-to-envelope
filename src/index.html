@@ -40,6 +40,16 @@
     />
 
     <link rel="stylesheet" href="style.css" />
+    <noscript>
+      <style>
+        .noscript {
+          visibility: visible;
+        }
+        .script {
+          visibility: collapse;
+        }
+      </style>
+    </noscript>
   </head>
 
   <body>
@@ -51,7 +61,21 @@
       <iframe id="envelope" src="iframe.html"></iframe>
     </div>
 
-    <section>
+    <section class="noscript">
+      <p>
+        There are controls here to change the size of the labels and the font,
+        which require Javascript to work. You have Javascript disabled. Please
+        enable Javascript to use these controls.
+      </p>
+      <p>
+        There is also a print button here, which requires Javascript to work. If
+        you are using Firefox, you can print without Javascript by right
+        clicking on the envelope and selecting "This Frame" > "Print Frame". If
+        you are using Chrome or other browsers based on it, this option is not
+        available and you must enable Javascript to print.
+      </p>
+    </section>
+    <section class="script">
       <label> Size of the FROM address: </label>
       <input
         type="range"
@@ -83,6 +107,49 @@
 
       <button id="print">Print</button>
     </section>
+
+    <section>
+      <h2>What is this website?</h2>
+      <p>
+        This website is a template for printing addresses on envelopes. It
+        allows you to fill out the addresses and print them on an envelope. You
+        will need a printer that can print on envelopes, loaded with #10
+        envelopes. #10 is the most common size of envelope in the US. It might
+        also work with envelopes of other sizes if you play around with the
+        scale.
+      </p>
+      <p>
+        To use this template, click the sections on the envelope labeled "FROM"
+        and "TO" and write the address you want to print. You can change the
+        size of the labels and the font used. Then click on the "Print" button
+        to print the envelope. Your browser's print dialog will open. Make sure
+        to select the "Envelope #10" paper size, pick "Landscape" orientation,
+        and turn off headers and footers.
+      </p>
+    </section>
+
+    <section>
+      <h2>Why use this website?</h2>
+      <p>
+        I needed to print on some envelopes, and looking around online I found
+        guides that told me to just use Microsoft Word. I don't have Microsoft
+        Word though! So I started looking around online for a simple template
+        like this, but I couldn't find anything. So I made this website. If you
+        are in a similar situation, I hope this website helps you!
+      </p>
+    </section>
+
+    <footer>
+      Made by <a href="https://bgenc.net">Kaan Barmore-Genc</a>. This website is
+      open source, you can find the source code on
+      <a href="https://github.com/SeriousBug/print-to-envelope"
+        >github.com/SeriousBug/print-to-envelope</a
+      >. All code for this website is licensed under
+      <a
+        href="https://github.com/SeriousBug/print-to-envelope/blob/main/LICENSE.txt"
+        >MIT</a
+      >.
+    </footer>
 
     <script src="script.js"></script>
   </body>
